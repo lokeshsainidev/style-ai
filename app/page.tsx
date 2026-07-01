@@ -1,17 +1,20 @@
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
-import Features from "../components/Features/Feature";
-import HowItWorks from "../components/HowItWorks";
-import StyleGallery from "../components/StyleGallery";
+
+import Feature from "../components/Features/Feature";
+import HowItWorks from "../components/HowItWorks/HowItWorks";
+import StyleGallery from "../components/StyleGallery/StyleGallery";
+import CTA from "../components/CTA/CTA";
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-black">
       <Navbar />
       <Hero />
-      <Features />
+      <Feature />
       <HowItWorks />
       <StyleGallery />
+      <CTA />
     </main>
   );
 }

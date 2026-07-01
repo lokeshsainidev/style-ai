@@ -3,9 +3,11 @@
 import { motion } from "framer-motion";
 import {
   Brain,
-  Sparkles,
-  ShieldCheck,
-  Zap,
+  Palette,
+  Shirt,
+  Scissors,
+  ShoppingBag,
+  BadgeCheck,
 } from "lucide-react";
 
 import FeatureCard from "./FeatureCard";
@@ -15,34 +17,51 @@ const features = [
     icon: Brain,
     title: "AI Face Analysis",
     description:
-      "Analyze your face shape, skin tone and body type with advanced AI.",
+      "Detect face shape, skin tone and facial features with advanced AI in seconds.",
   },
   {
-    icon: Sparkles,
-    title: "Unlimited Styles",
+    icon: Shirt,
+    title: "Outfit Recommendations",
     description:
-      "Generate business, casual, wedding, luxury and cinematic looks instantly.",
+      "Get personalized outfits for casual, office, wedding and party occasions.",
   },
   {
-    icon: Zap,
-    title: "Instant Results",
+    icon: Palette,
+    title: "Smart Color Palette",
     description:
-      "Receive professional style recommendations within seconds.",
+      "Discover colors that perfectly match your skin tone and personality.",
   },
   {
-    icon: ShieldCheck,
-    title: "100% Free & Private",
+    icon: Scissors,
+    title: "Hairstyle Suggestions",
     description:
-      "No subscriptions, no hidden costs and your images stay private.",
+      "Find hairstyles that best suit your face shape and overall appearance.",
+  },
+  {
+    icon: ShoppingBag,
+    title: "Shopping Assistant",
+    description:
+      "Explore fashion items similar to your AI recommendations from top brands.",
+  },
+  {
+    icon: BadgeCheck,
+    title: "Style Score",
+    description:
+      "Receive an AI confidence score with detailed fashion improvement tips.",
   },
 ];
 
-export default function Features() {
+export default function Feature() {
   return (
-    <section className="px-6 py-24">
-      <div className="mx-auto max-w-7xl">
+    <section className="relative overflow-hidden px-6 py-28">
 
-        {/* Section Heading */}
+      {/* Background Glow */}
+      <div className="absolute left-0 top-0 h-96 w-96 rounded-full bg-blue-500/10 blur-[120px]" />
+      <div className="absolute right-0 bottom-0 h-96 w-96 rounded-full bg-cyan-500/10 blur-[120px]" />
+
+      <div className="relative mx-auto max-w-7xl">
+
+        {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -50,22 +69,26 @@ export default function Features() {
           transition={{ duration: 0.7 }}
           className="text-center"
         >
-          <p className="font-semibold uppercase tracking-widest text-blue-400">
-            WHY STYLE AI
-          </p>
+          <span className="rounded-full border border-blue-500/20 bg-blue-500/10 px-4 py-2 text-sm font-semibold text-blue-400">
+            ✨ WHY STYLE AI
+          </span>
 
-          <h2 className="mt-4 text-4xl font-bold text-white md:text-5xl">
-            Everything You Need
+          <h2 className="mt-8 text-4xl font-bold text-white md:text-6xl">
+            AI-Powered Fashion
+            <span className="block bg-linear-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+              Intelligence
+            </span>
           </h2>
 
-          <p className="mx-auto mt-6 max-w-2xl text-lg text-zinc-400">
-            AI-powered fashion assistant that helps you discover your perfect
-            look in seconds.
+          <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-zinc-400">
+            Discover your perfect style using cutting-edge AI. From face
+            analysis to personalized outfits, StyleAI helps you look your best
+            every day.
           </p>
         </motion.div>
 
-        {/* Feature Cards */}
-        <div className="mt-16 grid gap-8 md:grid-cols-2 xl:grid-cols-4">
+        {/* Cards */}
+        <div className="mt-20 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
           {features.map((feature) => (
             <FeatureCard
               key={feature.title}
