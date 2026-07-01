@@ -5,6 +5,10 @@ import Feature from "../components/Features/Feature";
 import HowItWorks from "../components/HowItWorks/HowItWorks";
 import StyleGallery from "../components/StyleGallery/StyleGallery";
 import CTA from "../components/CTA/CTA";
+import Testimonials from "../components/Testimonials/Testimonials";
+import FAQ from "../components/FAQ/FAQ";
+import Footer from "../components/Footer/Footer";
+
 
 export default function Home() {
   return (
@@ -15,6 +19,9 @@ export default function Home() {
       <HowItWorks />
       <StyleGallery />
       <CTA />
+      <Testimonials/>
+      <FAQ/>
+      <Footer/>
     </main>
   );
 }
